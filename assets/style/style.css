@@ -1,0 +1,152 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  background-color: #22252d;
+  color: #ffffff;
+  padding-top: 50px;
+}
+
+.container {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.notifikasi {
+  display: flex;
+  justify-content: space-between;
+  background-color: #292d36;
+  padding: 5px 25px;
+  padding-top: 15px;
+  margin-bottom: 20px;
+  font-weight: 900;
+}
+
+.mode {
+  background-color: #292d36;
+  padding: 5px;
+  padding-top: 10px;
+  margin: 0 auto;
+  border-radius: 10px;
+  text-align: center;
+  width: 120px;
+  cursor: default;
+}
+
+.mode span {
+  margin: 0 10px;
+  cursor: pointer;
+}
+
+.mode span:hover {
+  opacity: 1;
+}
+
+.mode .light {
+  opacity: 0.5;
+}
+
+.mode .dark {
+  opacity: 0.5;
+}
+
+.active {
+  opacity: 0.9 !important;
+}
+
+.display {
+  font-size: 1.3em;
+  margin-right: 25px;
+  margin-bottom: 10px;
+  text-align: right;
+}
+
+.display h2 {
+  visibility: hidden;
+}
+
+.buttons {
+  background-color: #292d36;
+  border-radius: 20px;
+  margin: 0 20px;
+}
+
+.buttons-flex {
+  display: flex;
+}
+
+.buttons-flex div {
+  flex-basis: 25%;
+  font-size: 1.4em;
+  font-weight: 600;
+  text-align: center;
+  margin: 10px 25px;
+  padding: 10px 0;
+  cursor: pointer;
+  background-color: #272b33;
+  border-radius: 10px;
+  box-shadow: 2px 2px 8px 0 rgba(0, 0, 0, 0.25);
+}
+
+.buttons-flex div:hover {
+  opacity: 1;
+  font-weight: 1000;
+}
+
+.button-darkmode {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.button-lightmode {
+  color: rgba(34, 37, 45, 0.8);
+}
+
+.buttons-flex div.green {
+  color: #2dd4bf;
+  opacity: 1;
+}
+
+.buttons-flex div.red {
+  color: #f87171;
+  opacity: 1;
+}
+
+.buttons-flex div.red:hover {
+  color: #ef4444;
+}
+
+.buttons-flex div.green:hover {
+  color: #14b8a6;
+}
+
+.button-darkmode:hover {
+  color: rgba(255, 255, 255, 1) !important;
+}
+
+.button-lightmode:hover {
+  color: rgba(34, 37, 45, 1) !important;
+}
+
+@media screen and (max-width: 460px) {
+  .buttons-flex div {
+    margin: 10px 20px;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .buttons-flex div {
+    margin: 10px 15px;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .buttons-flex div {
+    margin: 10px 10px;
+  }
+}

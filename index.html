@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp" rel="stylesheet" />
+    <link rel="stylesheet" href="./assets/style/style.css" />
+
+    <link rel="icon" href="./assets/img/Logo Web Calculator.png" type="image/icon type" />
+    <title>Calculator</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="mode">
+        <span class="material-icons-outlined light"> wb_sunny </span>
+        <span class="material-icons-outlined dark active"> dark_mode </span>
+        <i class="fa-light fa-moon"></i>
+      </div>
+      <div class="display">
+        <h2>0</h2>
+        <h1>0</h1>
+      </div>
+      <div class="buttons">
+        <div class="buttons-flex">
+          <div class="button green kurung-buka">(</div>
+          <div class="button green kurung-tutup">)</div>
+          <div class="button green pangkat">^</div>
+          <div class="button red operator">%</div>
+        </div>
+        <div class="buttons-flex">
+          <div class="button green clear">C</div>
+          <div class="button green delete">DEL</div>
+          <div class="button green negative">+/-</div>
+          <div class="button red operator">÷</div>
+        </div>
+        <div class="buttons-flex">
+          <div class="button bnw button-darkmode">7</div>
+          <div class="button bnw button-darkmode">8</div>
+          <div class="button bnw button-darkmode">9</div>
+          <div class="button red operator">×</div>
+        </div>
+        <div class="buttons-flex">
+          <div class="button bnw button-darkmode">4</div>
+          <div class="button bnw button-darkmode">5</div>
+          <div class="button bnw button-darkmode">6</div>
+          <div class="button red operator">-</div>
+        </div>
+        <div class="buttons-flex">
+          <div class="button bnw button-darkmode">1</div>
+          <div class="button bnw button-darkmode">2</div>
+          <div class="button bnw button-darkmode">3</div>
+          <div class="button red operator">+</div>
+        </div>
+        <div class="buttons-flex">
+          <div class="button bnw button-darkmode">000</div>
+          <div class="button bnw button-darkmode">0</div>
+          <div class="button bnw button-darkmode titik">.</div>
+          <div class="button red equal">=</div>
+        </div>
+      </div>
+    </div>
+    <script src="./assets/script/mode.js"></script>
+    <script src="./assets/script/calculator.js"></script>
+  </body>
+</html>
