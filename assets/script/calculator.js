@@ -35,6 +35,9 @@ const inputNumber = (angka) => {
 
 const inputOperator = (operator) => {
   const index = calculator.display.length - 1;
+  if (index == calculator.titik[calculator.titik.length - 1]) {
+    return;
+  }
   if (index == calculator.operator[calculator.operator.length - 1]) {
     if (operator == "÷") {
       calculator.display[index] = ` ${operator} `;
@@ -77,6 +80,9 @@ const deleteCalculator = () => {
     if (index == calculator.operator[calculator.operator.length - 1]) {
       calculator.operator.pop();
     }
+    if (index == calculator.titik[calculator.titik.length - 1]) {
+      calculator.titik.pop();
+    }
     calculator.display.pop();
     calculator.input.pop();
   }
@@ -109,6 +115,10 @@ const negativeNumber = () => {
   } else {
     const index = calculator.operator[calculator.operator.length - 1] + 1;
 
+    if (calculator.display.length == index) {
+      return;
+    }
+
     if (calculator.display[index] == "(" && calculator.display[index + 1] == "-" && calculator.display[calculator.display.length - 1] == ")") {
       calculator.display.splice(index, 2);
       calculator.input.splice(index, 2);
@@ -131,16 +141,27 @@ const inputPangkat = () => {
 };
 
 const inputTitik = () => {
-  if (calculator.titik.length == "0") {
+  if (calculator.display.length == "0") {
+    calculator.display.push("0");
     calculator.display.push(".");
+    calculator.input.push("0");
     calculator.input.push(".");
     calculator.titik.push(calculator.display.length - 1);
   } else {
-    if (calculator.titik[calculator.titik.length - 1] < calculator.operator[calculator.operator.length - 1] && calculator.display.length - 1 != calculator.operator[calculator.operator.length - 1]) {
-      calculator.display.push(".");
-      calculator.input.push(".");
-      calculator.titik.push(calculator.display.length - 1);
+    if (calculator.display.length - 1 == calculator.operator[calculator.operator.length - 1]) {
+      return;
     }
+
+    if (calculator.titik.length != 0 && calculator.operator.length == 0) {
+      return;
+    }
+
+    if (calculator.titik[calculator.titik.length - 1] > calculator.operator[calculator.operator.length - 1]) {
+      return;
+    }
+    calculator.display.push(".");
+    calculator.input.push(".");
+    calculator.titik.push(calculator.display.length - 1);
   }
 };
 
@@ -170,7 +191,7 @@ buttons.forEach((button) => {
     }
 
     if (button.classList.contains("equal")) {
-      if (calculator.display.length != "0") {
+      if (calculator.display.length != "0" && !(calculator.display.length - 1 == calculator.titik[calculator.titik.length - 1] || calculator.display.length - 1 == calculator.operator[calculator.operator.length - 1])) {
         equalCalculator();
       }
       return;
@@ -193,10 +214,9 @@ buttons.forEach((button) => {
     }
 
     if (button.classList.contains("titik")) {
-      if (calculator.display.length != "0") {
-        inputTitik();
-        updateDisplay();
-      }
+      inputTitik();
+      updateDisplay();
+
       return;
     }
 
